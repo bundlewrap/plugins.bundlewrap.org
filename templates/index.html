@@ -47,15 +47,19 @@
 		<div class="row">
 			<div class="col-md-12">
 				<img class="main_icon pull-left" src="http://blockwart.org/img/icon.png" alt="Blockwart logo">
-				<div class="main_title pull-left">Blockwart Plugin Index</div>
+				<h1 class="main_title pull-left">Blockwart Plugin Index</h1>
 			</div>
 		</div>
 		<div class="row">
 			{% for plugin, metadata in index %}
 			<div class="col-md-4">
-				<h1>{{ plugin }} (v{{ metadata.version }})</h1>
+				<h2>{{ plugin }}</h2>
 				{{ metadata.desc }}
 			</div>
+			{% if loop.index % 3 == 0 %}
+		</div>
+		<div class="row">
+			{% endif %}
 			{% endfor %}
 		</div>
 		<div class="row">
