@@ -36,6 +36,10 @@
 		font-weight: 100;
 		line-height: 90px;
 	}
+	.plugin {
+		padding-right: 20px;
+		padding-bottom: 20px;
+	}
 	footer {
 		margin-top: 80px;
 		margin-bottom: 40px;
@@ -53,8 +57,10 @@
 		<div class="row">
 			{% for plugin, metadata in index %}
 			<div class="col-md-4">
-				<h2>{{ plugin }}</h2>
-				{{ metadata.desc }}
+				<div class="plugin">
+					<h2>{{ plugin }}</h2>
+					{{ metadata.desc }}
+				</div>
 			</div>
 			{% if loop.index % 3 == 0 %}
 		</div>
