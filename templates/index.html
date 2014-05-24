@@ -1,0 +1,4 @@
+{% for plugin, metadata in index %}
+<h1>{{ plugin }} (v{{ metadata.version }})</h1>
+{{ metadata.desc }}
+{% endfor %}
