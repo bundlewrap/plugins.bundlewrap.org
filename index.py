@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from requests import get
 from werkzeug.contrib.cache import SimpleCache
 
-INDEX_URL = "https://raw.githubusercontent.com/blockwart/plugins/master/index.json"
+INDEX_URL = "https://raw.githubusercontent.com/bundlewrap/plugins/master/index.json"
 CACHE_TIMEOUT = 3 * 60  # seconds
 
 app = Flask(__name__)
@@ -20,3 +20,6 @@ def index():
         "index.html",
         index=sorted(index_data.items()),
     )
+
+if __name__ == '__main__':
+    app.run(debug=True)
